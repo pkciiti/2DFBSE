@@ -7,12 +7,12 @@ alfa=besselzero(0,M);
 K=2/(M*M);
 
 Bes=besselj(0,([1:M]'.*repmat(alfa/M,M,1)))./(besselj(1,repmat(alfa,M,1))).^2;
-if dim==1 
+if dim==1  % FBSE operation row-wise
 Aimg=A.*img;
 Cofcol=K*Aimg*Bes;
 
 % col
-elseif dim==2  
+elseif dim==2   
 imgcol=img';
 Aimgcol=A.*imgcol;
 Cofcol=K*Aimgcol*Bes;
